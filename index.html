@@ -1,0 +1,30 @@
+---
+title: Home
+layout: default
+keywords: home, homepage
+description: site.description
+desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
+---
+
+<div id="main-stuff">
+	<h3>Latest posts</h3>
+		<div class="row">
+		{% for post in site.posts limit:3 %}
+		  {% assign post_img = '' | append: '/img/posts/' | append: post.image %}  
+		<div class="col-4 homepage-card" style="padding-right: 10px;">
+		  <div class="card">
+			<img class="card-img-top" src="{{ post_img }}" width="386" height="386" alt="This post has no image.">
+			<div class="card-block">
+			  <h4 class="card-title">{{ post.title }}</h4>
+			  <p class="card-text">{{ post.desc }}</p>
+			  <a href="{{ post.url }}" class="btn btn-primary">Go to post</a>
+			</div>
+			<div class="card-footer">
+			  <small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }}</small>
+			</div>
+		</div>
+		  </div>
+		{% endfor %}
+		</div>
+	<br>
+</div>

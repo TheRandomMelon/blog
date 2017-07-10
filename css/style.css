@@ -1,0 +1,99 @@
+@font-face {
+	font-family: 'Product Sans', Arial, sans-serif;
+}
+
+.product-sans {
+	font-family: 'Product Sans';
+}
+
+#main-stuff {
+	padding-top: 85px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.post-main {
+	width: 85%;
+	margin: auto;
+}
+
+.icon-small {
+	font-size: 16px;
+	padding-right: 3px;
+}
+
+.card-img-top {
+	height: auto;
+    max-width: 100%;
+    position: relative;
+    width: auto;
+}
+
+
+hr {
+	background-color: white;
+}
+
+.card-img-post {
+	filter: brightness(0.55);
+}
+
+.card-img-overlay-post {
+	/* Deprecated
+	-webkit-filter: drop-shadow(0px 0px 3px #aaa);
+	filter: drop-shadow(0px 0px 3px #aaa); 
+	*/
+}
+
+.card-img-left {
+  border-bottom-left-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(.25rem - 1px);
+  float: left;
+  padding-right: 1em;
+  margin-bottom: -1.25em;
+}
+
+.card-text-light {
+	color: whitesmoke;
+}
+
+#post-content {
+	font-size: 20px;
+}
+
+.card-title-post {
+	font-size: 32px;
+}
+
+.homepage-card {
+	/* Just do default stuff if not mobile */
+}
+
+@media screen and (max-width: 600px) {
+    .card-img-overlay-post {
+		font-size: 14px;
+	}
+
+	.card-title-post {
+		font-size: 18px;
+	}
+
+	.post-main {
+		width: 95%;
+	}
+
+	#post-content {
+		font-size: 20px;
+	}
+
+	.homepage-card {
+		margin-bottom: 10px;
+		width: 95% !important;
+		max-width: 95% !important;
+		flex: 0 0 95% !important;
+	}
+}
+
+.bg-navbar-main {
+	background-color: #AE1212 !important;
+}

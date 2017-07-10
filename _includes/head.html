@@ -1,0 +1,36 @@
+<head>
+	<!-- Search Engine Meta -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TheRandomMelon" />
+    <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}">
+    <meta name="keywords" content="therandommelon, trm, therandommelon youtube, blog, jekyll, tech, memes, {{ page.keywords | escape }}">
+    <!-- Open Graph  -->
+    <meta property="og:description" content="{{ page.desc | escape }}" />
+    {% if page.image %}
+    <meta property="og:image" content="https://blog.trm.ovh/img/posts/{{ page.image }}">
+    {% else %}
+    <meta property="og:image" content="https://blog.trm.ovh/img/melonz-logo.png">
+    {% endif %}
+    <!-- Twitter -->
+    {% if page.image %}
+	  <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@RandomMelonYT" />
+      <meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+      <meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+      <meta name="twitter:image" content="https://blog.trm.ovh/img/posts/{{ page.image }}" />
+    {% else %}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@RandomMelonYT" />
+      <meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+      <meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+	{% endif %}
+	<title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon's blog</title>
+	<link href='https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' rel='stylesheet' type='text/css'>
+	<script src="https://use.fontawesome.com/2c63a366fd.js"></script>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>	

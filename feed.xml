@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts from {{ site.title }}</title>
+    <description>Read the latest stuff from the {{ site.title }}!</description>
+    <link>{{ site.url }}</link>
+    {% for post in site.posts %}
+      {% unless post.draft %}
+        <item>
+          <title>{{ post.title | xml_escape }}</title>
+          <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+          <link>{{ post.url | prepend: site.url }}</link>
+		  {% if post.image %}
+			{% assign post_img = '' | append: '/img/posts/' | append: post.image %}
+			<image>{{ post_img }}</image>
+		  {% endif %}
+          <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
+        </item>
+      {% endunless %}
+    {% endfor %}
+  </channel>
+</rss>
