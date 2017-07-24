@@ -17,6 +17,7 @@ urlnp: blog.trm.ovh
 twitter: https://twitter.com/RandomMelonYT
 github: https://github.com/TheRandomMelon/therandommelon.github.io
 permalink: /:year/:title.html
+desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
 
 markdown: kramdown
 gems:
