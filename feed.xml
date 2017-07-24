@@ -12,6 +12,7 @@ layout: null
         <item>
           <title>{{ post.title | xml_escape }}</title>
           <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+		  <description>{{ post.desc }}</description>
           <link>{{ post.url | prepend: site.url }}</link>
 		  {% if post.image %}
 			{% assign post_img = '' | append: '/img/posts/' | append: post.image %}

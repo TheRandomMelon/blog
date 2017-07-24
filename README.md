@@ -1,4 +1,5 @@
-# TheRandomMelon's blog
-My Jekyll blog (i literally copy+pasted my own work from [the Melonz blog](https://github.com/melonz/melonz.github.io)).
+# Melonz's blog
+Our nice n' tasty blog. Powered by GitHub Pages and Jekyll.
 
-Visit the blog by clicking [here](https://blog.trm.ovh).
+
+Visit the blog by clicking [here](https://blog.melonz.nl).

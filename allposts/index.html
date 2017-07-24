@@ -1,0 +1,41 @@
+---
+layout: default-postnav
+title: All posts
+permalink: /allposts
+description: All the posts I've ever made.
+---
+
+<div id="main-stuff" class="post-main">
+{% for category in site.categories %}
+    <div id="{{ category | first | remove:' ' }}">
+        <h3>{{ category | first }}</h3>
+
+        <ul class="list-group allposts-pad">
+           {% for posts in category %}
+             {% for post in posts %}
+               {% if post.url %}
+               <li onclick="window.location.replace('{{ post.url }}')" class="allposts-li list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between allposts-li">
+				  {% if post.badge-text %}
+					<h5 class="mb-1"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h5>
+				  {% else %}
+					<h5 class="mb-1">{{ post.title }}</h5>
+				  {% endif %}
+				  <small>{{ post.date | date: "%-dth %B %Y" }}</small>
+				</div>
+				<div class="allposts-li">
+					<p class="mb-1">{{ post.desc }}</p>
+					{% if post.author %}
+						<small>Posted by <a href="{{ post.author-link }}">{{ post.author }}</a></small>
+					{% else %}
+						<small>Posted by TRM himself</small>
+					{% endif %}
+				</div>
+			  </li>
+               {% endif %}
+             {% endfor %}
+           {% endfor %}
+		</ul>
+	</div>
+{% endfor %}
+</div>

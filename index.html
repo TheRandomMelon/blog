@@ -1,9 +1,9 @@
 ---
 title: Home
 layout: default
-keywords: home, homepage
+keywords: home, homepage, melonz, melonz blog
 description: site.description
-desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
+desc: The official blog of Melonz. We post about ourselves (because we have an ego) and tech sometimes.
 ---
 
 <div id="main-stuff">
@@ -15,12 +15,20 @@ desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mai
 		  <div class="card">
 			<img class="card-img-top" src="{{ post_img }}" width="386" height="386" alt="This post has no image.">
 			<div class="card-block">
+			 {% if post.badge-text %}
+			  <h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
+			 {% else %}
 			  <h4 class="card-title">{{ post.title }}</h4>
+			 {% endif %}
 			  <p class="card-text">{{ post.desc }}</p>
 			  <a href="{{ post.url }}" class="btn btn-primary">Go to post</a>
 			</div>
 			<div class="card-footer">
-			  <small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }}</small>
+			  {% if post.author %}
+				<small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }}</small>
+			  {% else %}
+				<small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }} by <a href="{{ post.author-link }}">{{ post.author }}</a></small>
+			  {% endif %}
 			</div>
 		</div>
 		  </div>
