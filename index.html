@@ -24,11 +24,7 @@ desc: The official blog of Melonz. We post about ourselves (because we have an e
 			  <a href="{{ post.url }}" class="btn btn-primary">Go to post</a>
 			</div>
 			<div class="card-footer">
-			  {% if post.author %}
 				<small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }}</small>
-			  {% else %}
-				<small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }} by <a href="{{ post.author-link }}">{{ post.author }}</a></small>
-			  {% endif %}
 			</div>
 		</div>
 		  </div>
