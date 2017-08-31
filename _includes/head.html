@@ -2,10 +2,10 @@
 	<!-- Search Engine Meta -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="TheRandomMelon" />
-    <meta name="description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}">
     <meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, trm.ovh, blog.trm.ovh, {{ page.keywords | escape }}">
     <!-- Open Graph  -->
-    <meta property="og:description" content="{{ page.desc | escape }}" />
+    <meta property="og:description" content="{{ page.description | escape }}" />
     {% if page.image %}
     <meta property="og:image" content="https://blog.trm.ovh/img/posts/{{ page.image }}">
     {% else %}
