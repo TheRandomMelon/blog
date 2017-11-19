@@ -3,13 +3,13 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="TheRandomMelon" />
     <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}">
-    <meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, trm.ovh, blog.trm.ovh, {{ page.keywords | escape }}">
+    <meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, trm.ovh, therandommelon.xyz, {{ page.keywords | escape }}">
     <!-- Open Graph  -->
     <meta property="og:description" content="{{ page.description | escape }}" />
     {% if page.image %}
-    <meta property="og:image" content="https://blog.trm.ovh/img/posts/{{ page.image }}">
+    <meta property="og:image" content="https://therandommelon.xyz/img/posts/{{ page.image }}">
     {% else %}
-    <meta property="og:image" content="https://blog.trm.ovh/img/trm_logo.png">
+    <meta property="og:image" content="https/therandommelon.xyz/img/trm_logo.png">
     {% endif %}
     <!-- Twitter -->
     {% if page.image %}
@@ -17,7 +17,7 @@
       <meta name="twitter:site" content="@RandomMelonYT" />
       <meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
       <meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
-      <meta name="twitter:image" content="https://blog.trm.ovh/img/posts/{{ page.image }}" />
+      <meta name="twitter:image" content="https://therandommelon.xyz/img/posts/{{ page.image }}" />
     {% else %}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@RandomMelonYT" />
