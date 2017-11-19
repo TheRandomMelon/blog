@@ -3,23 +3,24 @@
 {% include head.html %}
 <body class="d-flex flex-column">
     {% include navbar-post.html %}
-    <div id="main-stuff" class="post-main flex-grow">
-        <div class="card card-inverse"> <!-- Sets the card at the top -->
-			{% if page.image-banner %}
-				<img alt="Card image" class="card-img card-img-post" src="/img/post-blank.png" style="background-image: url('/img/posts/{{ page.image-banner }}');  background-size: cover;" height="125">
+	
+		{% if page.image-banner %}
+		<div class="jumbotron jumbotron-fluid box-drop-shadow-light" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image-banner }}');  background-size: cover;">
+		{% elsif page.image %}
+		<div class="jumbotron jumbotron-fluid box-drop-shadow-light" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image }}');  background-size: cover;">
+		{% else %}
+		<div class="jumbotron jumbotron-fluid box-drop-shadow-light">
+		{% endif %}
+		  <div class="container">
+			<h1 class="display-4 text-drop-shadow-light">{{ page.title }}</h1>
+			{% if page.author %}
+					<p class="lead text-drop-shadow-light">{{ page.desc }}<br>Posted in <a href="/allposts#{{ page.category }}">{{ page.category }}</a> by <a href="{{ page.author-link }}">{{ page.author }}</a></p>
 			{% else %}
-				<img alt="Card image" class="card-img card-img-post" src="/img/post-blank.png" style="background-image: url('/img/posts/{{ page.image }}'); background-size: cover;" height="125">
+					<p class="lead text-drop-shadow-light">{{ page.desc }}<br>Posted in <a href="/allposts#{{ page.category }}">{{ page.category }}</a></p>
 			{% endif %}
-            <div class="card-img-overlay card-img-overlay-post">
-                <h4 class="card-title card-title-post product-sans">{{ page.title }}</h4>
-				{% if page.author %}
-					<p class="card-text card-text-light">{{ page.desc }}<br><span class="card-text">Posted in <a href="/allposts#{{ page.category }}">{{ page.category }}</a> by <a href="{{ page.author-link }}">{{ page.author }}</a></span></p>
-				{% else %}
-					<p class="card-text card-text-light">{{ page.desc }}<br><span class="card-text">Posted in <a href="/allposts#{{ page.category }}">{{ page.category }}</a></span></p>
-				{% endif %}
-			</div>
-        </div>
-        <br>
+		  </div>
+		</div>
+    <div id="main-stuff" class="post-main flex-grow">
         <div id="post-content">
             {{ content }}
         </div>	
@@ -27,7 +28,7 @@
 		  <div class="card-header">
 			Enjoyed the post?
 		  </div>
-		  <div class="card-block">
+		  <div class="card-body">
 			<h4 class="card-title">Share it around!</h4>
 			<p class="card-text">Click the fancy social links below to share.</p>
 			<ul class="nav">

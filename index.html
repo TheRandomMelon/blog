@@ -7,28 +7,27 @@ desc: My blog. Y'know, when I have to vent or something, I dunno.
 ---
 
 <div id="main-stuff">
-	<h3>Latest posts</h3>
+	<h3>Latest 5 posts</h3>
 		<div class="row">
-		{% for post in site.posts limit:3 %}
-		  {% assign post_img = '' | append: '/img/posts/' | append: post.image %}  
-		<div class="col-4 homepage-card" style="padding-right: 10px;">
-		  <div class="card">
-			<img class="card-img-top" src="{{ post_img }}" width="386" height="386" alt="This post has no image.">
-			<div class="card-block">
-			 {% if post.badge-text %}
-			  <h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
-			 {% else %}
-			  <h4 class="card-title">{{ post.title }}</h4>
-			 {% endif %}
-			  <p class="card-text">{{ post.desc }}</p>
-			  <a href="{{ post.url }}" class="btn btn-primary">Go to post</a>
+		{% for post in site.posts limit:5 %}
+		<div class="homepage-card">
+			<div class="card mb-3 clearfix">
+			  <div class="card-body">
+				<div class="float-left">
+				{% if post.badge-text %}
+				  <h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
+				 {% else %}
+				  <h4 class="card-title">{{ post.title }}</h4>
+				 {% endif %}
+				<p class="card-text">{{ post.desc }}</p>
+				</div>
+				<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
+			  </div>
 			</div>
-			<div class="card-footer">
-				<small class="text-muted">Posted on {{ post.date | date: "%-dth %B %Y" }} -- Posted in {{ post.category }}</small>
-			</div>
-		</div>
-		  </div>
+		 </div>
 		{% endfor %}
 		</div>
-	<br>
+		<br>
+		<h3>Want more posts?</h3>
+		<a href="/allposts" class="btn btn-primary">See all posts</a>
 </div>

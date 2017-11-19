@@ -35,9 +35,7 @@ img {
 /* Actual things now xoxo */
 
 #main-stuff {
-	padding-top: 85px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 15px;
 }
 
 .post-main {
@@ -85,16 +83,12 @@ hr {
 	color: whitesmoke;
 }
 
-#post-content {
-	font-size: 20px;
-}
-
 .card-title-post {
 	font-size: 32px;
 }
 
 .homepage-card {
-	/* Just do default stuff if not mobile */
+	width: 100%;
 }
 
 .allposts-li {
@@ -204,6 +198,36 @@ pre {
 .highlight .vm { color: #40ffff } /* Name.Variable.Magic */
 .highlight .il { color: #3677a9 } /* Literal.Number.Integer.Long */
 
+.text-drop-shadow-light {
+	text-shadow: 0px 0px 10px white;
+}
+
+.text-drop-shadow-dark {
+	text-shadow: 0px 0px 10px #333;
+}
+
+.box-drop-shadow-dark {
+	box-shadow: 0px 0px 10px #333;
+}
+
+.box-drop-shadow-light {
+	box-shadow: 0px 0px 10px whitesmoke;
+}
+
+.image-desc {
+	background: #00bc8c !important;
+	width: 70%;
+	justify-content: center;
+	display: flex;
+	padding: 5px;
+	vertical-align: center;
+	color: white;
+}
+
+.post-image {
+	width: 70%;
+}
+
 /* Mobile compatibility */
 @media screen and (max-width: 600px) {
     .card-img-overlay-post {
@@ -218,14 +242,15 @@ pre {
 		width: 95%;
 	}
 
-	#post-content {
-		font-size: 20px;
-	}
-
 	.homepage-card {
 		margin-bottom: 10px;
-		width: 95% !important;
-		max-width: 95% !important;
-		flex: 0 0 95% !important;
+	}
+	
+	.image-desc {
+		width: 100%;
+	}
+	
+	.post-image {
+		width: 100%;
 	}
 }

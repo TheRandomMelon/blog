@@ -12,11 +12,11 @@ title: TheRandomMelon's blog
 email: trm@melonz.nl
 description: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
 baseurl: ""
-url: https://blog.trm.ovh
-urlnp: blog.trm.ovh
+url: https://therandommelon.xyz
+urlnp: therandommelon.xyz
 twitter: https://twitter.com/RandomMelonYT
-github: https://github.com/TheRandomMelon/therandommelon.github.io
-permalink: /:year/:title.html
+github: https://github.com/TheRandomMelon/blog
+permalink: /:year/:title
 desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
 
 markdown: kramdown
