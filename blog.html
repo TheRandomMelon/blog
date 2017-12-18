@@ -15,13 +15,22 @@ desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mai
 			  <div class="card-body">
 				<div class="float-left">
 				{% if post.badge-text %}
-				  <h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
-				 {% else %}
-				  <h4 class="card-title">{{ post.title }}</h4>
-				 {% endif %}
-				<p class="card-text">{{ post.desc }}</p>
+					<h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
+				{% else %}
+					<h4 class="card-title">{{ post.title }}</h4>
+				{% endif %}
+				
+				{% if post.via %}
+				<p class="card-text">Posted on {{ post.date | date: "%-dth %B %Y" }} on {{ post.via }}</p>
+				{% else %}
+				<p class="card-text">Posted on {{ post.date | date: "%-dth %B %Y" }}</p>
+				{% endif %}
 				</div>
-				<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
+				{% if post.via %}
+					<a href="{{ post.via-link }}" class="btn btn-primary float-right">Read this post on {{ post.via }}</a>
+				{% else %}
+					<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
+				{% endif %}
 			  </div>
 			</div>
 		 </div>
