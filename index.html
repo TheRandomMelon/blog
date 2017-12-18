@@ -1,33 +1,112 @@
 ---
 title: Home
-layout: default
-keywords: home, homepage, trm, therandommelon blog
-description: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
-desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech. I like memes and coding.
+keywords: trm, therandommelon, homepage
 ---
 
-<div id="main-stuff">
-	<h3>Latest 5 posts</h3>
-		<div class="row">
-		{% for post in site.posts limit:5 %}
-		<div class="homepage-card">
-			<div class="card mb-3 clearfix">
-			  <div class="card-body">
-				<div class="float-left">
-				{% if post.badge-text %}
-				  <h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
-				 {% else %}
-				  <h4 class="card-title">{{ post.title }}</h4>
-				 {% endif %}
-				<p class="card-text">{{ post.desc }}</p>
-				</div>
-				<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
-			  </div>
-			</div>
-		 </div>
-		{% endfor %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Search Engine Meta -->
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="TheRandomMelon" />
+	<meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}">
+	<meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, trm.ovh, therandommelon.xyz, {{ page.keywords | escape }}">
+	<!-- Open Graph  -->
+	<meta property="og:description" content="{{ page.description | escape }}" />
+	{% if page.image %}
+	<meta property="og:image" content="https://therandommelon.xyz/img/posts/{{ page.image }}">
+	{% else %}
+	<meta property="og:image" content="https/therandommelon.xyz/img/trm_logo.png">
+	{% endif %}
+	<!-- Twitter -->
+	{% if page.image %}
+	<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@trmmelon" />
+		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+		<meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+		<meta name="twitter:image" content="https://therandommelon.xyz/img/posts/{{ page.image }}" />
+	{% else %}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@trmmelon" />
+		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+		<meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+{% endif %}
+<title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon</title>
+<meta name=”theme-color” content=”#367b97”>
+<link href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+	 $(function () { $('[data-toggle="tooltip"]').tooltip() })
+</script>
+</head>
+<body class="d-flex flex-column homepagerow">
+	<div class="m-4">
+		<div style="text-align: center;">
+			<h1><img src="/img/trm_logo.png" width="50" alt="TRM Logo" class="rounded-circle align-top" /> TheRandomMelon</h1>
+
+			<a href="https://twitter.com/trmmelon" class="mr-2" style="color: #00aced;"><i class="fab fa-twitter"></i> Twitter</a>
+			<a href="https://www.youtube.com/TheRandomMelon" class="mr-2" style="color: #FF0000;"><i class="fab fa-youtube"></i> YouTube</a>
+			<a href="https://github.com/TheRandomMelon" class="mr-2" style="color: white;"><i class="fab fa-github"></i> GitHub</a>
+			<a href="https://minds.com/TheRandomMelon" class="mr-2" style="color: #FFCC00;"><i class="fas fa-lightbulb"></i> Minds</a>
+			<a href="/blog/" class="mr-2" style="color: white;"><i class="fas fa-pencil-alt"></i> Blog</a>
 		</div>
-		<br>
-		<h3>Want more posts?</h3>
-		<a href="/allposts" class="btn btn-primary">See all posts</a>
-</div>
+
+		<h2><br>Stuff I make</h2>
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">Melonz</h4>
+							<p class="card-text">A team of people I put together to develop software.</p>
+							<a href="https://melonz.nl" class="btn btn-primary" style="background-color: #96B844; border-color: #96B844;">
+								<i class="fa fa-globe"></i> Website
+							</a>
+							<a href="https://twitter.com/MelonzDev" class="btn btn-primary" style="background-color: #00aced; border-color: #00aced;">
+								<i class="fab fa-twitter"></i> Twitter
+							</a>
+						</div>
+					</div>
+					<br>
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">WeebHole</h4>
+								<p class="card-text">A weeb's dream news source.</p>
+								<a href="https://weebhole.com" class="btn btn-primary" style="background-color: #96B844; border-color: #96B844;">
+									<i class="fa fa-globe"></i> Website
+								</a>
+								<a href="https://twitter.com/WeebHole" class="btn btn-primary" style="background-color: #00aced; border-color: #00aced;">
+									<i class="fab fa-twitter"></i> Twitter
+								</a>
+							</div>
+						</div>
+			<br>
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Melonian</h4>
+					<p class="card-text">A jack-of-all-trades Discord bot.</p>
+					<a href="https://melonian.xyz" class="btn btn-primary" style="background-color: #96B844; border-color: #96B844;">
+						<i class="fa fa-globe"></i> Website
+					</a>
+				</div>
+			</div>
+			<br>
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Small Fun Server!</h4>
+					<p class="card-text">A small, but fun, Discord server!</p>
+					<a href="https://discord.gg/NHaabaU" class="btn btn-primary" style="background-color: #7289DA; border-color: #7289DA;">
+						<i class="fab fa-discord"></i> Discord
+					</a>
+					<a href="https://twitter.com/smallfunserver" class="btn btn-primary" style="background-color: #00aced; border-color: #00aced;">
+						<i class="fab fa-twitter"></i> Twitter
+					</a>
+				</div>
+			</div>
+			</div>
+	</div>
+</body>
+</html>

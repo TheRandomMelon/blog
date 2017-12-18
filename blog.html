@@ -1,0 +1,34 @@
+---
+title: My blog
+layout: default
+permalink: /blog/
+keywords: trm, therandommelon blog, therandommelon
+description: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech.
+desc: TheRandomMelon's official Jekyll blog. I ramble about whatever I want, mainly memes and tech.
+---
+
+<div id="main-stuff">
+	<h3>Latest 5 posts</h3>
+		<div class="row">
+		{% for post in site.posts limit:5 %}
+		<div class="homepage-card">
+			<div class="card mb-3 clearfix">
+			  <div class="card-body">
+				<div class="float-left">
+				{% if post.badge-text %}
+				  <h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
+				 {% else %}
+				  <h4 class="card-title">{{ post.title }}</h4>
+				 {% endif %}
+				<p class="card-text">{{ post.desc }}</p>
+				</div>
+				<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
+			  </div>
+			</div>
+		 </div>
+		{% endfor %}
+		</div>
+		<br>
+		<h3>Want more posts?</h3>
+		<a href="/allposts" class="btn btn-primary">See all posts</a>
+</div>

@@ -14,17 +14,17 @@
     <!-- Twitter -->
     {% if page.image %}
 	  <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@RandomMelonYT" />
+      <meta name="twitter:site" content="@trmmelon" />
       <meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
       <meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
       <meta name="twitter:image" content="https://therandommelon.xyz/img/posts/{{ page.image }}" />
     {% else %}
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@RandomMelonYT" />
+      <meta name="twitter:site" content="@trmmelon" />
       <meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
       <meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
 	{% endif %}
-	<title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon's blog</title>
+	<title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon</title>
 	<meta name=”theme-color” content=”#367b97”>
 	<script src="https://use.fontawesome.com/2c63a366fd.js"></script>
 	<link rel="stylesheet" href="/css/style.css">
