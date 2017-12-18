@@ -5,11 +5,11 @@
     {% include navbar-post.html %}
 	
 		{% if page.image-banner %}
-		<div class="jumbotron jumbotron-fluid box-drop-shadow-light" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image-banner }}');  background-size: cover;">
+		<div class="jumbotron jumbotron-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image-banner }}');  background-size: cover;">
 		{% elsif page.image %}
-		<div class="jumbotron jumbotron-fluid box-drop-shadow-light" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image }}');  background-size: cover;">
+		<div class="jumbotron jumbotron-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image }}');  background-size: cover;">
 		{% else %}
-		<div class="jumbotron jumbotron-fluid box-drop-shadow-light">
+		<div class="jumbotron jumbotron-fluid">
 		{% endif %}
 		  <div class="container">
 			<h1 class="display-4 text-drop-shadow-light">{{ page.title }}</h1>
