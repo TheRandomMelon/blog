@@ -92,10 +92,6 @@ hr {
 	font-size: 32px;
 }
 
-.homepage-card {
-	width: 100%;
-}
-
 .allposts-li {
  cursor: pointer;
 }
@@ -233,6 +229,12 @@ pre {
 	width: 70%;
 }
 
+
+
+	.homepage-card {
+		margin-bottom: 10px;
+	}
+
 /* Mobile compatibility */
 @media screen and (max-width: 600px) {
     .card-img-overlay-post {
@@ -245,10 +247,6 @@ pre {
 
 	.post-main {
 		width: 95%;
-	}
-
-	.homepage-card {
-		margin-bottom: 10px;
 	}
 	
 	.image-desc {

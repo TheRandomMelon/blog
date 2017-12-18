@@ -5,7 +5,7 @@ permalink: /allposts
 description: All the posts I've ever made.
 ---
 
-<div id="main-stuff" class="post-main">
+<div class="m-4">
 {% for category in site.categories %}
     <div id="{{ category | first | remove:' ' }}">
         <h3>{{ category | first }}</h3>
