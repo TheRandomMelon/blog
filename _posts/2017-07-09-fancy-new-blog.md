@@ -1,6 +1,7 @@
 ---
 title: I got a blog!
 layout: post
+old: true
 category: Personal
 image: got_a_blog/site.png
 keywords: new blog, trm new blog, trm's blog
@@ -19,6 +20,6 @@ I've finally made a blog, powered by Jekyll and GitHub Pages!
 Yup! [Right here.](/feed.xml) Subscribe today, if people still use RSS feeds...
 
 ### I want to comment! Where's the comments section?
-That's coming soon. For now, send me a tweet ([@RandomMelonYT](https://twitter.com/RandomMelonYT)), or DM me on Discord to tell me your thoughts!
+That's coming soon. For now, send me a tweet ([@michaelwebbtrm](https://twitter.com/michaelwebbtrm)), or DM me on Discord to tell me your thoughts!
 
-Alright, that's all I have for now! Subscribe to the [RSS feed](/feed.xml), and [follow me on Twitter](https://twitter.com/RandomMelonYT) if you want.
+Alright, that's all I have for now! Subscribe to the [RSS feed](/feed.xml), and [follow me on Twitter](https://twitter.com/michaelwebbtrm) if you want.

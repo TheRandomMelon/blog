@@ -37,7 +37,7 @@ keywords: homepage
 		<meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
 {% endif %}
 <title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon</title>
-<meta name=”theme-color” content=”#367b97”>
+<meta name=”theme-color” content=”#96B844”>
 <link href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/bootstrap.css">
@@ -55,66 +55,132 @@ keywords: homepage
 		<div style="text-align: center;">
 			<h1><img src="/img/trm_logo.png" width="50" alt="TRM Logo" class="rounded-circle align-top" /> TheRandomMelon</h1>
 
-			<a href="https://twitter.com/michaelwebbtrm" class="mr-2" style="color: #00aced;"><i class="fab fa-twitter"></i> Twitter</a>
-			<a href="https://www.youtube.com/TheRandomMelon" class="mr-2" style="color: #FF0000;"><i class="fab fa-youtube"></i> YouTube</a>
-			<a href="https://github.com/TheRandomMelon" class="mr-2" style="color: #ddd;"><i class="fab fa-github"></i> GitHub</a>
-			<a href="https://medium.com/@TheRandomMelon" class="mr-2" style="color: white;"><i class="fab fa-medium"></i> Medium</a>
-			<a href="/blog/" class="mr-2" style="color: white;"><i class="fas fa-pencil-alt"></i> Blog [Archive]</a>
+			<a href="https://twitter.com/michaelwebbtrm" class="mr-2 text-twitter"><i class="fab fa-twitter"></i> Twitter</a>
+			<a href="https://www.youtube.com/TheRandomMelon" class="mr-2 text-youtube"><i class="fab fa-youtube"></i> YouTube</a>
+			<a href="https://gitlab.com/TheRandomMelon" class="mr-2 text-gitlab"><i class="fab fa-gitlab"></i> GitLab</a>
+			<a href="https://github.com/TheRandomMelon" class="mr-2 text-github"><i class="fab fa-github"></i> GitHub</a>
+			<a href="" data-toggle="modal" data-target="#emailModal" class="mr-2 text-blog"><i class="fas fa-envelope"></i> Email</a>
+			<a href="/blog/" class="mr-2 text-blog"><i class="fas fa-pencil-alt"></i> Blog</a>
 		</div>
-
-		<h2><br>Stuff I make</h2>
-					<div class="card">
-						<div class="card-body">
-							<h4 class="card-title">Melonz</h4>
-							<p class="card-text">A team of people I put together to develop software.</p>
-							<a href="https://melonz.nl" class="btn btn-primary" style="background-color: #96B844; border-color: #96B844;">
-								<i class="fa fa-globe"></i> Website
+		<div class="modal fade" id="emailModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Email address</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+					<pre class="text-white">michael [at] therandommelon [dot] com</pre>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-trm" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<br>
+		<h2>Newest blog post</h2>
+		{% for post in site.posts limit:1 %}
+		<div class="homepage-card">
+			<div class="card mb-3 clearfix">
+			  <div class="card-body">
+				<div class="float-left">
+				{% if post.badge-text %}
+					<h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
+				{% else %}
+					<h4 class="card-title">{{ post.title }}</h4>
+				{% endif %}
+				
+				{% if post.via %}
+				<p class="card-text">
+					{{ post.desc }}<br>
+					<span class="text-muted">Posted on {{ post.date | date: '%B %d, %Y' }} on {{ post.via }}</span>
+				</p>
+				{% else %}
+				<p class="card-text">
+					{{ post.desc }}<br>
+					<span class="text-muted">Posted on {{ post.date | date: '%B %d, %Y' }}</span>
+				</p>
+				{% endif %}
+				</div>
+				{% if post.via %}
+					<a href="{{ post.via-link }}" class="btn btn-primary float-right">Read this post on {{ post.via }}</a>
+				{% else %}
+					<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
+				{% endif %}
+			  </div>
+			</div>
+		</div>
+		{% endfor %}
+		<br>
+		<h2>Stuff I make and made</h2>
+		<div class="stuff-list">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col col-projects-icon">
+							<img src="/img/neptune.jpg" width="64" alt="Neptune" class="rounded-circle" />
+						</div>
+						<div class="col">
+							<h4 class="card-title">NeptuneTV</h4>
+							<p class="card-text">Coming soon! A semi-open source content aggregation network that allows for a Reddit-style community.</p>
+							<a href="https://watchneptune.tv" class="btn btn-trm">
+								<i class="fas fa-globe"></i> Website
 							</a>
-							<a href="https://twitter.com/MelonzDev" class="btn btn-primary" style="background-color: #00aced; border-color: #00aced;">
+							<a href="https://twitter.com/watchneptunetv" class="btn btn-twitter">
 								<i class="fab fa-twitter"></i> Twitter
 							</a>
 						</div>
 					</div>
-					<br>
-						<div class="card">
-							<div class="card-body">
-								<h4 class="card-title">WeebHole</h4>
-								<p class="card-text">A weeb's dream news source.</p>
-								<a href="https://weebhole.com" class="btn btn-primary" style="background-color: #96B844; border-color: #96B844;">
-									<i class="fa fa-globe"></i> Website
-								</a>
-								<a href="https://twitter.com/WeebHole" class="btn btn-primary" style="background-color: #00aced; border-color: #00aced;">
-									<i class="fab fa-twitter"></i> Twitter
-								</a>
-							</div>
+					<div class="position-relative">
+						<span class="position-absolute right-0 badge badge-success">Active development</span>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col col-projects-icon">
+							<img src="/img/melonian.png" width="64" alt="Melonian" class="rounded-circle" />
 						</div>
-			<br>
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Melonian</h4>
-					<p class="card-text">A jack-of-all-trades Discord bot.</p>
-					<a href="https://melonian.com" class="btn btn-primary" style="background-color: #96B844; border-color: #96B844;">
-						<i class="fa fa-globe"></i> Website
-					</a>
-					<a href="https://discordapp.com/oauth2/authorize?&client_id=236987731232686081&scope=bot&permissions=19456" class="btn btn-primary" style="background-color: #7289DA; border-color: #7289DA;">
-						<i class="fab fa-discord"></i> Add to your Discord server
-					</a>
+						<div class="col">
+							<h4 class="card-title">Melonian</h4>
+							<p class="card-text">A jack-of-all-trades Discord bot.</p>
+							<a href="https://gitlab.com/Melonz/Melonian" class="btn btn-gitlab">
+								<i class="fab fa-gitlab"></i> GitLab
+							</a>
+						</div>
+					</div>
+					<div class="position-relative">
+						<span class="position-absolute right-0 badge badge-warning">Security Updates ONLY</span>
+					</div>
 				</div>
 			</div>
-			<br>
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title">TRM Community</h4>
-					<p class="card-text">An awesome Discord community for discussing anime, video games, your life and more. All right here. Oh, did I forget to say, <a target="_blank" href="https://twitter.com/trmcommunity/status/956731574434713600">we have the best emotes</a>?</p>
-					<a href="https://discord.gg/ag59HVF" class="btn btn-primary" style="background-color: #7289DA; border-color: #7289DA;">
-						<i class="fab fa-discord"></i> Discord
-					</a>
-					<a href="https://twitter.com/trmcommunity" class="btn btn-primary" style="background-color: #00aced; border-color: #00aced;">
-						<i class="fab fa-twitter"></i> Twitter
-					</a>
+					<div class="row">
+						<div class="col col-projects-icon">
+							<img src="/img/histacom.png" width="64" alt="Histacom" class="rounded-circle" />
+						</div>
+						<div class="col">
+							<h4 class="card-title">Histacom 2</h4>
+							<p class="card-text">Revival of the original hacking simulator!</p>
+							<a href="https://github.com/TheRandomMelon/Melonian" class="btn btn-github-alt">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+							<a href="https://discord.gg/CeBBXWN" class="btn btn-discord">
+								<i class="fab fa-discord"></i> Discord Server
+							</a>
+						</div>
+					</div>
+					<div class="position-relative">
+						<span class="position-absolute right-0 badge badge-danger">On hold</span>
+					</div>
 				</div>
 			</div>
-			</div>
+		</div>
 	</div>
 </body>
 </html>

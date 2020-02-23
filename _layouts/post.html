@@ -3,45 +3,59 @@
 {% include head.html %}
 <body class="d-flex flex-column">
     {% include navbar-post.html %}
-	
-		{% if page.image-banner %}
-		<div class="jumbotron jumbotron-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image-banner }}');  background-size: cover;">
-		{% elsif page.image %}
-		<div class="jumbotron jumbotron-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/img/posts/{{ page.image }}');  background-size: cover;">
-		{% else %}
-		<div class="jumbotron jumbotron-fluid">
-		{% endif %}
-		  <div class="container">
-			<h1 class="display-4 text-drop-shadow-light">{{ page.title }}</h1>
-			{% if page.author %}
-					<p class="lead text-drop-shadow-light">{{ page.desc }}<br>Posted in <a href="/allposts#{{ page.category }}">{{ page.category }}</a> by <a href="{{ page.author-link }}">{{ page.author }}</a></p>
-			{% else %}
-					<p class="lead text-drop-shadow-light">{{ page.desc }}<br>Posted in <a href="/allposts#{{ page.category }}">{{ page.category }}</a></p>
-			{% endif %}
-		  </div>
+	<div class="container mt-4">
+		{% if page.old %}
+		<div class="alert alert-warning text-center">
+			<span><i class="fas fa-exclamation-triangle"></i> <b>WARNING:</b> This post is old. It probably doesn't conform to the layout of the site anymore, and may contain out of date information.</span>
 		</div>
-    <div id="main-stuff" class="post-main flex-grow">
+		{% endif %}
+
+		{% if page.image-banner %}
+		<img class="img-fluid border border-secondary rounded" src="/img/posts/{{ page.image-banner }}">
+		{% elsif page.image %}
+		<img class="img-fluid border border-secondary rounded" src="/img/posts/{{ page.image }}">
+		{% endif %}
+		
+		<div class="container mt-4 mb-2 ml-0 pl-0">
+			<h1 class="display-4 text-center">{{ page.title }}</h1>
+			{% if page.author %}
+			<p class="lead text-center">{{ page.desc }}<br>Posted in <a href="/posts#{{ page.category }}">{{ page.category }}</a> by <a href="{{ page.author-link }}">{{ page.author }} on {{ page.date | date: '%B %d, %Y' }}</a></p>
+			{% else %}
+			<p class="lead text-center">
+				{{ page.desc }}
+				<br>
+				<span class="text-muted">
+					Posted in <a class="text-github" href="/posts#{{ page.category }}">{{ page.category }}</a> 
+					on {{ page.date | date: '%B %d, %Y' }}
+					{% if page.date != page.last_modified_at %}
+						- edited on {{ page.last_modified_at | date: '%B %d, %Y' }}
+					{% endif %}
+				</span>
+			</p>
+			{% endif %}
+		</div>
+	</div>
+		
+    <div class="container mt-4">
         <div id="post-content">
             {{ content }}
         </div>	
-		<div class="card">
-		  <div class="card-header">
-			Enjoyed the post?
-		  </div>
-		  <div class="card-body">
-			<h4 class="card-title">Share it around!</h4>
-			<p class="card-text">Click the fancy social links below to share.</p>
-			<ul class="nav">
-				<li class="nav-item"><a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }} - {{ page.url | prepend: site.url }} via @RandomMelonYT" class="nav-link" data-toggle="tooltip" data-placement="top" title="Tweet it on Twitter"><i class="fa fa-twitter fa-lg"></i></a></li>
-				<li class="nav-item"><a target="_blank" href="https://www.reddit.com/submit?url={{ page.url | prepend: site.url }}&title={{ page.title }}" class="nav-link" data-toggle="tooltip" data-placement="top" title="Post it on Reddit"><i class="fa fa-reddit-alien fa-lg"></i></a></li>
-				<li class="nav-item"><a target="_blank" href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}&hl=en&text={{ page.desc }}" class="nav-link" data-toggle="tooltip" data-placement="top" title="Post it on Google+"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
-				<li class="nav-item"><a target="_blank" href="mailto:?subject={{ page.title }} via {{ site.title }}&body={{ page.desc }} Read more at {{ page.url | prepend: site.url }}" class="nav-link" data-toggle="tooltip" data-placement="top" title="Mail it to someone's inbox"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-			</ul>
-		  </div>
+		<div class="card mt-5">
+		  	<div class="card-header">
+				Enjoyed the post?
+		  	</div>
+		  	<div class="card-body">
+				<h4 class="card-title">Share it around!</h4>
+				<p class="card-text">Click the fancy social links below to share.</p>
+				<ul class="nav">
+					<li class="nav-item"><a style="padding: 0.5rem 1rem !important; padding-left: 0px !important;" target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }} - {{ page.url | prepend: site.url }} via @michaelwebbtrm" class="ml-0 pl-0 nav-link" data-toggle="tooltip" data-placement="top" title="Tweet it on Twitter"><i class="fab fa-twitter fa-lg"></i></a></li>
+					<li class="nav-item"><a style="padding: 0.5rem 1rem !important;" target="_blank" href="https://www.reddit.com/submit?url={{ page.url | prepend: site.url }}&title={{ page.title }}" class="nav-link" data-toggle="tooltip" data-placement="top" title="Post it on Reddit"><i class="fab fa-reddit fa-lg"></i></a></li>
+					<li class="nav-item"><a style="padding: 0.5rem 1rem !important;" target="_blank" href="mailto:?subject={{ page.title }} via {{ site.title }}&body={{ page.desc }} Read more at {{ page.url | prepend: site.url }}" class="nav-link" data-toggle="tooltip" data-placement="top" title="Mail it to someone's inbox"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+				</ul>
+		  	</div>
 		</div>
     </div>
 	<br>
 	<br>
-	{% include foot.html %}
 </body>
 </html>

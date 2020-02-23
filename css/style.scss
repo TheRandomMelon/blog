@@ -1,4 +1,70 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
 /* Product Sans font declaration */
+
+$gitlab: #FC6D27;
+$github: #DDD;
+$twitter: #00aced;
+$youtube: #FF0000;
+$github-alt: black;
+$trm: #96B844;
+$discord: #7289DA;
+$blog: #eee;
+$dark: #343a40;
+
+$colors: ("darker": $dark, "blog": $blog, "discord": $discord, "trm": $trm, "gitlab": $gitlab, "youtube": $youtube, "github-alt": $github-alt, "github": $github, "twitter": $twitter);
+
+.col.col-projects-icon {
+	max-width: 64px;
+	padding: 0;
+	margin-left: 15px;
+}
+
+.right-0 {
+	right: 0;
+	bottom: 5px;
+}
+
+@each $name, $color in $colors{
+	.text-#{$name} {
+		color: $color;
+	}
+
+	a.text-#{$name} {
+		transition: all 200ms ease;
+		text-decoration: none !important;
+	}
+
+	a.text-#{$name}:hover {
+		color: darken($color, 15%);
+	}
+
+	.btn-#{$name} {
+		background-color: $color;
+		border-color: $color;
+		color: white;
+	}
+
+	.bg-#{$name} {
+		background-color: $color;
+		color: white;
+	}
+
+	.btn-#{$name}:hover {
+		color: white;
+		background-color: darken($color, 15%);
+		border-color: darken($color, 15%);
+	}
+
+	.badge-#{$name} {
+		background-color: $color;
+	}
+}
+
+.stuff-list .card:not(:last-child) {
+	margin-bottom: 1.25rem;
+}
 
 @font-face {
 	font-family: 'Product Sans', Arial, sans-serif;
@@ -22,10 +88,6 @@
     src: url("font/product-sans-bolditalic.woff2");
     font-weight: bold;
 	font-style: italic;
-}
-
-img {
-    max-width: 100%;
 }
 
 .product-sans {

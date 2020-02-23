@@ -1,6 +1,7 @@
 ---
 title: I finally bothered to update this blog!
 layout: post
+old: true
 category: Blog Updates
 image: bothered-to-update/newsite.png
 keywords: update, jekyll, github, trm, blog update

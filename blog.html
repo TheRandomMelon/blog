@@ -3,14 +3,12 @@ title: My blog
 layout: default
 permalink: /blog/
 keywords: trm, therandommelon blog, therandommelon
-description: Moved to Medium - https://medium.com/@TheRandomMelon
-desc: Moved to Medium - https://medium.com/@TheRandomMelon
+description: My thoughts and feelings put into a blog that no one cares about.
+desc: My thoughts and feelings put into a blog that no one cares about.
 ---
 
 <div class="m-4">
-	<h2>Moved to Medium!</h2>
-	<a class="btn btn-primary" href="https://medium.com/@TheRandomMelon">Follow me!</a>
-	<p>The reason why I moved is simple:<br>- Medium is a nicer platform.<br><br>But, I'm gonna keep this archive here.</p>
+	<h2>Latest posts</h2>
 		{% for post in site.posts limit:5 %}
 		<div class="homepage-card">
 			<div class="card mb-3 clearfix">
@@ -23,9 +21,15 @@ desc: Moved to Medium - https://medium.com/@TheRandomMelon
 				{% endif %}
 				
 				{% if post.via %}
-				<p class="card-text">Posted on {{ post.date | date: "%-dth %B %Y" }} on {{ post.via }}</p>
+				<p class="card-text">
+					{{ post.desc }}<br>
+					<span class="text-muted">Posted on {{ post.date | date: '%B %d, %Y' }} on {{ post.via }}</span>
+				</p>
 				{% else %}
-				<p class="card-text">Posted on {{ post.date | date: "%-dth %B %Y" }}</p>
+				<p class="card-text">
+					{{ post.desc }}<br>
+					<span class="text-muted">Posted on {{ post.date | date: '%B %d, %Y' }}</span>
+				</p>
 				{% endif %}
 				</div>
 				{% if post.via %}
@@ -39,5 +43,5 @@ desc: Moved to Medium - https://medium.com/@TheRandomMelon
 		{% endfor %}
 		<br>
 		<h3>Want more posts?</h3>
-		<a href="/allposts" class="btn btn-primary">See all posts</a>
+		<a href="/posts" class="btn btn-primary">See all posts</a>
 </div>

@@ -1,6 +1,7 @@
 ---
 title: A snazzy new homepage
 layout: post
+old: true
 category: Blog Updates
 image: new-homepage/newhome.png
 keywords: update, jekyll, github, trm, webpage update

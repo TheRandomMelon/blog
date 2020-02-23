@@ -3,6 +3,7 @@ title: What happened to WeebHole?
 layout: post
 category: Posts from other sites
 keywords: weebhole
+old: true
 id: what-happened-to-weebhole
 desc: WeebHole experienced a long downtime. What happened?
 via: weebhole.com
