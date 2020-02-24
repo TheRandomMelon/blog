@@ -2,13 +2,13 @@
 	<!-- Search Engine Meta -->
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="TheRandomMelon" />
-	<meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}">
+	<meta name="description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}">
 	<meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, therandommelon.com, {{ page.keywords | escape }}">
 	<!-- Open Graph  -->
 	<meta property="og:title" content="{{ page.title | escape }}">
 	<meta property="og:site_name" content="TheRandomMelon">
 	<meta property="og:url" content="https://therandommelon.com">
-	<meta property="og:description" content="{{ page.description | escape }} ">
+	<meta property="og:description" content="{{ page.desc | escape }} ">
 	<meta property="og:type" content="website">
 	{% if page.image %}
 	<meta property="og:image" content="https://therandommelon.com/img/posts/{{ page.image }}">
@@ -26,7 +26,7 @@
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@michaelwebbtrm" />
 		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
-		<meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+		<meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
 {% endif %}
 <title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon</title>
 	<meta name=”theme-color” content=”#96B844”>
