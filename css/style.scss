@@ -10,10 +10,11 @@ $youtube: #FF0000;
 $github-alt: black;
 $trm: #96B844;
 $discord: #7289DA;
+$twitch: #9146FF;
 $blog: #eee;
 $dark: #343a40;
 
-$colors: ("darker": $dark, "blog": $blog, "discord": $discord, "trm": $trm, "gitlab": $gitlab, "youtube": $youtube, "github-alt": $github-alt, "github": $github, "twitter": $twitter);
+$colors: ("darker": $dark, "blog": $blog, "discord": $discord, "trm": $trm, "gitlab": $gitlab, "youtube": $youtube, "github-alt": $github-alt, "github": $github, "twitter": $twitter, "twitch": $twitch);
 
 .col.col-projects-icon {
 	max-width: 64px;
