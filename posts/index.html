@@ -8,7 +8,7 @@ description: All the posts I've ever made.
 <div class="m-4">
 {% for category in site.categories %}
     <div id="{{ category | first | remove:' ' }}">
-        <h3>{{ category | first }}</h3>
+        <h3 class="mt-3 mb-3">{{ category | first }}</h3>
 
         <ul class="list-group allposts-pad">
            {% for posts in category %}
@@ -28,7 +28,7 @@ description: All the posts I've ever made.
 					{% if post.author %}
 						<small>Posted by <a href="{{ post.author-link }}">{{ post.author }}</a></small>
 					{% else %}
-						<small>Posted by TRM himself</small>
+						<small>Posted by me</small>
 					{% endif %}
 				</div>
 			  </li>

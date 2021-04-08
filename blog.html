@@ -3,16 +3,16 @@ title: My blog
 layout: default
 permalink: /blog/
 keywords: trm, therandommelon blog, therandommelon
-description: My thoughts and feelings put into a blog that no one cares about.
-desc: My thoughts and feelings put into a blog that no one cares about.
+description: My thoughts put into a blog that no one cares about.
+desc: My thoughts put into a blog that no one cares about.
 ---
 
 <div class="m-4">
-	<h2>Latest posts</h2>
-		{% for post in site.posts limit:5 %}
-		<div class="homepage-card">
-			<div class="card mb-3 clearfix">
-			  <div class="card-body">
+	<h2 class="mb-4 text-center">Latest posts</h2>
+	{% for post in site.posts limit:5 %}
+	<div class="homepage-card">
+		<div class="card mb-3 clearfix">
+			<div class="card-body">
 				<div class="float-left">
 				{% if post.badge-text %}
 					<h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
@@ -33,15 +33,15 @@ desc: My thoughts and feelings put into a blog that no one cares about.
 				{% endif %}
 				</div>
 				{% if post.via %}
-					<a href="{{ post.via-link }}" class="btn btn-primary float-right">Read this post on {{ post.via }}</a>
+					<a href="{{ post.via-link }}" class="btn btn-primary btn-blog-home">Read this post on {{ post.via }}</a>
 				{% else %}
-					<a href="{{ post.url }}" class="btn btn-primary float-right">Read this post</a>
+					<a href="{{ post.url }}" class="btn btn-primary btn-blog-home">Read this post</a>
 				{% endif %}
-			  </div>
 			</div>
-		 </div>
-		{% endfor %}
-		<br>
-		<h3>Want more posts?</h3>
-		<a href="/posts" class="btn btn-primary">See all posts</a>
+		</div>
+	</div>
+	{% endfor %}
+	<br>
+	<h2 class="mb-4 mt-4">Want more posts?</h2>
+	<a href="/posts" class="btn btn-primary text-center">See all posts</a>
 </div>
