@@ -14,7 +14,11 @@ description: All the posts I've ever made.
            {% for posts in category %}
              {% for post in posts %}
                {% if post.url %}
-               <li onclick="window.location.replace('{{ post.url }}')" class="allposts-li list-group-item list-group-item-action flex-column align-items-start">
+			   	{% if post.via %}
+				   <li onclick="window.location.replace('{{ post.via-link }}')" class="allposts-li list-group-item list-group-item-action flex-column align-items-start">
+				{% else %}
+				   <li onclick="window.location.replace('{{ post.url }}')" class="allposts-li list-group-item list-group-item-action flex-column align-items-start">
+				{% endif %}   
 				<div class="d-flex w-100 justify-content-between allposts-li">
 				  {% if post.badge-text %}
 					<h5 class="mb-1"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h5>
@@ -26,9 +30,17 @@ description: All the posts I've ever made.
 				<div class="allposts-li">
 					<p class="mb-1">{{ post.desc }}</p>
 					{% if post.author %}
-						<small>Posted by <a href="{{ post.author-link }}">{{ post.author }}</a></small>
+						{% if post.via %}
+							<small>Posted by <a href="{{ post.author-link }}">{{ post.author }}</a> to {{ post.via }}</small>
+						{% else %}
+							<small>Posted by <a href="{{ post.author-link }}">{{ post.author }}</a></small>
+						{% endif %}
 					{% else %}
-						<small>Posted by me</small>
+						{% if post.via %}
+							<small>Posted by me to {{ post.via }}</small>
+						{% else %}
+							<small>Posted by me</small>
+						{% endif %}
 					{% endif %}
 				</div>
 			  </li>
