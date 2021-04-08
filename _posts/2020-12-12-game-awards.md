@@ -25,7 +25,7 @@ This is also not **too** much of a shocker, but I still think all of those could
 <img src="/img/posts/game-awards-2020/Game Awards 2020 - Best RPG.png" class="border post-image border-success rounded-top">
 <span class="image-desc border-top-0 rounded-bottom border-success">The game with the best sound design is Paper Mario: The Origami King. Right click -> View image in new tab for full screen viewing.</span>
 
-Now **THIS** was a result that truly shocked me. I wasn't expecting Paper Mario: The Origami King to win this category. Yes, it's a pretty good game, but I was actually expecting Persona 5 Royal to win. I guess you have to expect the unexpected, huh?
+Now **THIS** was a result that truly shocked me. I wasn't expecting Paper Mario: The Origami King to win this category. Yes, it's a pretty good game, but I was actually expecting Persona 5 Royal to win, considering that (in my view) it was really the biggest RPG release of 2020. I guess you have to expect the unexpected, huh?
 
 # Best Ongoing Game
 <img src="/img/posts/game-awards-2020/Game Awards 2020 - Best Ongoing Game.png" class="border post-image border-success rounded-top">
@@ -38,7 +38,7 @@ These are all of the ones that I'll show, but have no commentary on. I hope you 
 
 And, of course, a special thank you for a great 2020 for my YouTube channel and especially my Twitch channel! Cheers to 2021 hopefully not being 2020 Part II.
 
-- Michael / TheRandomMelon
+~ Michael / TheRandomMelon
 
 <img src="/img/posts/game-awards-2020/Game Awards 2020 - Best Art Direction.png" class="border post-image border-success rounded-top">
 <span class="image-desc border-top-0 rounded-bottom border-success">The game with the best art direction is Ori and the Will of the Wisps. Right click -> View image in new tab for full screen viewing.</span>
