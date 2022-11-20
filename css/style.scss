@@ -11,9 +11,11 @@ $trm: #96B844;
 $discord: #7289DA;
 $twitch: #9146FF;
 $blog: #eee;
+$mastodon: #fff;
 $dark: #343a40;
+$imdb: #F39C12;
 
-$colors: ("darker": $dark, "blog": $blog, "discord": $discord, "trm": $trm, "gitlab": $gitlab, "youtube": $youtube, "github-alt": $github-alt, "github": $github, "twitter": $twitter, "twitch": $twitch);
+$colors: ("darker": $dark, "blog": $blog, "discord": $discord, "trm": $trm, "gitlab": $gitlab, "youtube": $youtube, "github-alt": $github-alt, "github": $github, "twitter": $twitter, "twitch": $twitch, "mastodon": $mastodon, "imdb": $imdb);
 
 .col.col-projects-icon {
 	max-width: 64px;
